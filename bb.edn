@@ -1,0 +1,8 @@
+{:deps {io.github.borkdude/quickblog
+        {:git/sha "78563bc3547cc1019903570f9d73c942f868ad44"}}
+ :tasks
+ {:requires ([quickblog.cli :as cli])
+  :init (def opts {:blog-title "Code with Kira"
+                   :blog-description "Adventures in coding with Kira"})
+  quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
+             :task (cli/dispatch opts)}}}
