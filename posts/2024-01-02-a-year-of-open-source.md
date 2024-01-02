@@ -4,7 +4,7 @@ Tags: open source, clojure, clojurists together
 
 It's a new year! I always feel so ambitious at the start of a new year. This one especially, though. I got a very exciting early Christmas present this year.
 
-![Daniel's very exciting message!](/assets/2023-12-30-clj-together-message.jpg)
+![Daniel's very exciting message!](/assets/2024-01-02-clj-together-message.jpg)
 
 Of course I happily accepted this super exciting opportunity. Ever since I started dabbling software nearly 10 years ago now my dream was to eventually someday, somehow, make a living on my own terms. I quickly learned that I am not cut out for tech startups, but there are lots of other ways to make a living in software. I'm not sure I'm cut out for those either, but the way I see it this year is my chance to finally find out.
 
