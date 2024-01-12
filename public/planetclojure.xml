@@ -3,11 +3,18 @@
   <title>Code with Kira</title>
   <link href="https://codewithkira.com/atom.xml" rel="self"/>
   <link href="https://codewithkira.com"/>
-  <updated>2024-01-03T19:26:27+00:00</updated>
+  <updated>2024-01-12T20:09:11+00:00</updated>
   <id>https://codewithkira.com</id>
   <author>
     <name>Kira McLean</name>
   </author>
+  <entry>
+    <id>https://codewithkira.com/2024-01-12-clojure-tidy-tuesdays.html</id>
+    <link href="https://codewithkira.com/2024-01-12-clojure-tidy-tuesdays.html"/>
+    <title>Clojure Tidy Tuesdays</title>
+    <updated>2024-01-12T23:59:59+00:00</updated>
+    <content type="html"><![CDATA[<p>One of the things I'm going to spend my new-found independent software development time on this year is doing TidyTuesdays in Clojure. It's no surprise that I'm a big fan of Clojure, or that I think there is a lack of good "how to do data science with Clojure" content out there. One of the big things I want to accomplish this year is filling this gap.</p><p>To that end, I'll be publishing "translations" of the data-fetching scripts into Clojure and implementations of example data analysis from <a href='https://github.com/rfordatascience/tidytuesday/tree/master'>TidyTuesdays</a>, an initiative of the R for data science online learning community.</p><p>The idea is that they post a toy dataset each week along with an example article that uses the same or similar data, and then the community posts their solutions and what they did with it around the internet.</p><p>I'll be sharing mine in <a href='https://github.com/kiramclean/clojure-tidy-tuesdays/tree/main'>this Clojure Tidy Tuesdays github repo</a> and posting on <a href='https://indieweb.social/@kira'>Mastodon</a> and <a href='https://www.linkedin.com/in/kiramclean/'>LinkedIn</a>. Follow along here or there for more!</p>]]></content>
+  </entry>
   <entry>
     <id>https://codewithkira.com/2024-01-02-a-year-of-open-source.html</id>
     <link href="https://codewithkira.com/2024-01-02-a-year-of-open-source.html"/>
