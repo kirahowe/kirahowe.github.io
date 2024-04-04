@@ -22,8 +22,4 @@ The explorations with the Tidy Tuesday data have been revealing areas where I th
 
 I am also still working on the Clojure Data Cookbook. I nudged it forward ever so slightly these last couple of months, and I plan to finish it despite the remaining holes in Clojure's data science stack. I would love to also fill these in eventually, but the Cookbook will be a living document that can easily evolve and be updated as new tools and libraries are developed.
 
-Lastly, one of the main missing pieces I'm discovering we really need to work on in Clojure's data science ecosystem is a robust yet flexible graphics library. There are a few great solutions that already exist, but they take different approaches to graphing that can make them a bit clumsy to work with when it comes time to build more complex visualisations. My dream is to implement a proper [grammar of graphics](https://ggplot2-book.org) in Clojure, giving the Clojure data ecosystem a "profressional quality" graphics library, so to speak. Anyway.. there is still tons of work to do here so I'm grateful for the ongoing funding that will allow me to continue to focus a large amount of time on it for the foreseeable future.
-
-
-
-
+Lastly, one of the main missing pieces I'm discovering we really need to work on in Clojure's data science ecosystem is a robust yet flexible graphics library. There are a few great solutions that already exist, but they take different approaches to graphing that can make them a bit clumsy to work with when it comes time to build more complex visualisations. My dream is to implement a proper [grammar of graphics](https://ggplot2-book.org) in Clojure, giving the Clojure data ecosystem a "professional quality" graphics library, so to speak. Anyway.. there is still tons of work to do here so I'm grateful for the ongoing funding that will allow me to continue to focus a large amount of time on it for the foreseeable future.
