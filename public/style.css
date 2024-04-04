@@ -154,7 +154,6 @@ code {
   }
 }
 
-
 /**********************************************************************/
 /* Images
 /**********************************************************************/
@@ -200,3 +199,37 @@ figcaption {
   figcaption {
     width: 100%;
   }
+}
+
+/**********************************************************************/
+/* Code
+/**********************************************************************/
+
+code {
+  background: var(--code-background);
+  border-radius: 5px;
+  box-shadow: 2px 2px var(--shadow);
+  font-family: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+  font-size: 0.85rem;
+  margin: 0 0.1rem;
+  padding: 0.1rem 0.45rem;
+}
+
+small code {
+  font-size: 90%;
+}
+
+pre {
+  background: var(--code-background);
+  border-radius: 5px;
+  box-shadow: 2px 2px var(--shadow);
+  font-size: var(--small);
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+  color: var(--code);
+}
+
+pre code {
+  box-shadow: unset;
+  padding: 0;
+}
