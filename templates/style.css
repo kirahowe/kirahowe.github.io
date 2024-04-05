@@ -33,8 +33,8 @@
     --shadow: var(--literally-black);
     --code-background: var(--darker-black);
     --code: var(--white);
-    --table-shaded: var(--literally-black);
-    --table-border: var(--dark-grey);
+    --table-shaded: var(--darker-black);
+    --table-border: var(--literally-black);
   }
 }
 
