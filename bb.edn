@@ -5,6 +5,7 @@
   :init (def opts {:blog-title "Code with Kira"
                    :blog-description "Adventures in coding with Kira"
                    :blog-author "Kira McLean"
-                   :blog-root "https://codewithkira.com"})
+                   :blog-root "https://codewithkira.com"
+                   :link-prev-next-posts true})
   quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
              :task (cli/dispatch opts)}}}

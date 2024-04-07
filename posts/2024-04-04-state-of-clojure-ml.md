@@ -74,3 +74,5 @@ It's worth also briefly mentioning [clojisr](https://github.com/scicloj/clojisr)
 ## More updates
 
 These discussions all happen in the open, on the [Clojurian's Zulip instance](https://clojurians.zulipchat.com), which has become the main gathering place of the Clojure-for-data-science community. The `#data-science` and `#noj-dev` streams are the most active on these topics at the time of this writing. You can follow along with developments in the trenches over there, or follow the key libraries on github for updates ([scicloj.ml.tribuo](https://github.com/scicloj/scicloj.ml.tribuo), [metamorph.ml](https://github.com/scicloj/metamorph.ml), [noj](https://github.com/scicloj/noj)). I will also post periodic updates here and all the other corners of the internet where I lurk. Thank you for reading!
+
+**Discuss this post on [Hacker News](https://news.ycombinator.com/item?id=39947045) or [Reddit](https://www.reddit.com/r/Clojure/comments/1bxamkm/clojure_for_ml_update/)**

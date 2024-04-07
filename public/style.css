@@ -10,8 +10,10 @@
   --lighter-grey: #f3f3f3;
   --white: #fbfbfb;
   --small: 0.7rem;
+  --monospace: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
 
   --colour: var(--teal);
+  --second-colour: var(--lighter-teal);
   --background: var(--white);
   --text: var(--black);
   --muted-text: var(--dark-grey);
@@ -26,6 +28,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --colour: var(--lighter-teal);
+    --second-colour: var(--teal);
     --background: var(--black);
     --text: var(--light-grey);
     --muted-text: var(--medium-grey);
@@ -51,16 +54,16 @@ html {
   /* to undo styles in head that prevent fouc */
   visibility: visible;
   opacity: 1;
-  border-bottom: 10px solid var(--colour);
 }
 
 body {
   margin: 0;
-  /* min-height: 100vh; */
-  /* display: flex; */
-  /* flex-direction: column; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  border-bottom: 10px solid var(--colour);
 }
 
 main {
@@ -68,7 +71,7 @@ main {
   width: 100%;
   margin: 0 auto;
   padding: 0 1em;
-  /* flex: 1; */
+  flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -77,6 +80,95 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5rem;
+}
+
+/**********************************************************************/
+/* Header
+/**********************************************************************/
+
+header {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1em;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  border: none;
+  font-size: revert;
+  font-family: var(--monospace);
+  background: var(--colour);
+  letter-spacing: -0.07rem;
+  padding: 0.1rem 0.5rem;
+  box-shadow: 3px 3px var(--second-colour);
+  border-radius: 5px;
+}
+
+header h1 a, header h1 a:visited {
+  color: var(--background);
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav a {
+  fill: var(--colour);
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+code {
+  white-space: pre;
+}
+
+/* Screens 750px or smaller */
+/****************************/
+@media only screen and (max-width: 750px) {
+  header nav {
+    padding-bottom: 1rem;
+  }
+}
+
+/**********************************************************************/
+/* Contact
+/**********************************************************************/
+
+.contact li {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.linkedin:hover, .linkedin:visited:hover {
+  background: #0f4fb5;
+  outline: 3px solid #0f4fb5;
+  color: var(--lighter-grey);
+}
+
+.github:hover, .github:visited:hover {
+  background: #181a1e;
+  outline: 3px solid #181a1e;
+  color: var(--lighter-grey);
+}
+
+.mastodon:hover, .mastodon:visited:hover {
+  background: #463bff;
+  outline: 3px solid #463bff;
+  color: var(--lighter-grey);
 }
 
 /**********************************************************************/
@@ -102,60 +194,6 @@ a:visited:hover, a:visited:focus {
   background: var(--text);
   color: var(--background);
   outline: 3px solid var(--text);
-}
-
-/**********************************************************************/
-/* Header
-/**********************************************************************/
-
-header {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 0 1em;
-  border-bottom: 2px solid var(--border);
-}
-
-header h1 {
-  border: none;
-  margin: 0;
-}
-
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-header nav a {
-  fill: var(--colour);
-}
-
-header nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-header nav ul li {
-  margin-right: 1rem;
-  display: inline-block;
-}
-
-code {
-  white-space: pre;
-}
-
-/* Screens 750px or smaller */
-/****************************/
-@media only screen and (max-width: 750px) {
-  header nav {
-    flex-direction: column;
-    padding-bottom: 1rem;
-  }
-
-  header nav p {
-    margin: 0;
-  }
 }
 
 /**********************************************************************/
@@ -213,7 +251,7 @@ code {
   background: var(--code-background);
   border-radius: 5px;
   box-shadow: 2px 2px var(--shadow);
-  font-family: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+  font-family: var(--monospace);
   font-size: 0.85rem;
   margin: 0 0.1rem;
   padding: 0.1rem 0.45rem;

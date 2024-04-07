@@ -53,12 +53,13 @@
         <a href="{{relative-path | safe}}index.html">{{blog-title}}</a>
       </h1>
       <nav>
-        <p>{{blog-description}}</p>
         <ul>
           <li><a href="{{relative-path | safe}}archive{{page-suffix}}">Archive</a></li>
           <li><a href="{{relative-path | safe}}tags/index.html">Tags</a></li>
-          {% if discuss-link %}<li><a href="{{discuss-link}}">Discuss</a></li>{% endif %}
           <li><a href="{{relative-path | safe}}atom.xml">Feed</a></li>
+          <li><a class="icon mastodon" href="https://indieweb.social/@kira" target="blank">Mastodon</a></li>
+          <li><a class="icon linkedin" href="https://www.linkedin.com/in/kiramclean" target="blank">LinkedIn</a></li>
+          <li><a class="icon github" href="https://github.com/kiramclean" target="blank">Github</a></li>
         </ul>
       </nav>
     </header>
