@@ -45,9 +45,9 @@
 html {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.5;
   background-color: var(--background);
-  font-size: 22px;
+  font-size: 18px;
   /* to undo styles in head that prevent fouc */
   visibility: visible;
   opacity: 1;
@@ -64,7 +64,7 @@ body {
 }
 
 main {
-  max-width: 38rem;
+  max-width: 44rem;
   width: 100%;
   margin: 0 auto;
   padding: 0 1em;
@@ -73,7 +73,6 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 2.5rem;
-  border-bottom: 2px solid var(--border);
 }
 
 h1 {
@@ -110,7 +109,7 @@ a:visited:hover, a:visited:focus {
 /**********************************************************************/
 
 header {
-  max-width: 38rem;
+  max-width: 44rem;
   margin: 0 auto;
   padding: 0 1em;
   border-bottom: 2px solid var(--border);
