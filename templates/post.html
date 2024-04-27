@@ -1,12 +1,13 @@
 <h1>
   {% if post-link %}
   <a href="{{post-link}}">
-  {% endif %}
-  {{title}}
-  {% if post-link %}
+    {% endif %}
+    {{title}}
+    {% if post-link %}
   </a>
   {% endif %}
 </h1>
+<date><i>Published {{date}}</i></date>
 {{body | safe}}
 
 {% if any prev next %}
@@ -21,7 +22,6 @@
 </div>
 {% endif %}
 
-<p><i>Published: {{date}}</i></p>
 {% if tags %}
 <p>
   <i>

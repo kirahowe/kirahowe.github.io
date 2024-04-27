@@ -8,7 +8,7 @@ It's no secret I love Clojure and especially working with data in Clojure, but i
 
 There are already people doing "real" machine learning work in Clojure, though, and below is an overview of what the current state of our libraries and tools are in that area, as of April 2024.
 
-_Update: It's worth mentioning that deep learning and LLM libraries have been intentionally left out of this post in order to keep it a "reasonable" length. There is enough separate work happening in that space that it warrants its own, separate overview._
+_Update 2024-04-08: It's worth mentioning that deep learning and LLM libraries have been intentionally left out of this post in order to keep it a "reasonable" length. There is enough separate work happening in that space that it warrants its own, separate overview._
 
 ## Summary
 
