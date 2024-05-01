@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OSS Updates March and April 2024</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="application/atom+xml" rel="alternate" href="atom.xml" title="OSS Updates March and April 2024">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-clojure.min.js"></script>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css">
+
+
+
+    <!-- Social sharing (Facebook, Twitter, LinkedIn, etc.) -->
+    <meta name="title" content="OSS Updates March and April 2024">
+    <meta name="twitter:title" content="OSS Updates March and April 2024">
+    <meta property="og:title" content="OSS Updates March and April 2024">
+    <meta property="og:type" content="website">
+
+
+    <meta name="twitter:url" content="https://codewithkira.com/2024-04-30-clojurists-together-update-mar-apr-2024.html">
+    <meta property="og:url" content="https://codewithkira.com/2024-04-30-clojurists-together-update-mar-apr-2024.html">
+
+
+    <meta name="twitter:card" content="summary">
+
+
+
+    <script defer data-domain="codewithkira.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="https://analytics.eu.umami.is/script.js" data-website-id="21d16294-afc5-465a-a0b1-539ccf7679e9"></script>
+
+    <link rel="me" href="https://indieweb.social/@kira">
+    <link rel="me" href="https://github.com/kiramclean">
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="VRDCNTIY" defer></script>
+    <!-- / Fathom -->
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">Code with Kira</a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="archive.html">Archive</a></li>
+          <li><a href="tags/index.html">Tags</a></li>
+          <li><a href="atom.xml">Feed</a></li>
+          <li><a class="icon mastodon" href="https://indieweb.social/@kira" target="blank">Mastodon</a></li>
+          <li><a class="icon linkedin" href="https://www.linkedin.com/in/kiramclean" target="blank">LinkedIn</a></li>
+          <li><a class="icon github" href="https://github.com/kiramclean" target="blank">Github</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <h1>
+  
+    OSS Updates March and April 2024
+    
+</h1>
+<date><i>Published 2024-04-30</i></date>
+<p>This is a summary of the open source work I've spent my time on throughout March and April, 2024. Overall it was a really insightful couple of months for me, with lots of productive discussions and meetings happening among key contributors to Clojure's data science ecosystem and great progress toward some of our most ambitious goals.</p><h2 id="sponsors">Sponsors</h2><p>This work is made possible by the generous ongoing support of my sponsors. I appreciate all of the support the community has given to my work and would like to give a special thanks to Clojurists Together and Nubank for providing me with lucrative enough grants that I can reduce my client work significantly and afford to spend more time on these projects.</p><p>If you find my work valuable, please share it with others and consider supporting it financially. There are details about how to do that on my <a href='https://github.com/sponsors/kiramclean/'>GitHub sponsors page</a>. On to the updates!</p><h2 id="grammar&#95;of&#95;graphics&#95;in&#95;clojure">Grammar of graphics in Clojure</h2><p>With help from Daniel Slutsky and others in the community, I started some concrete work on implementing a grammar of graphics in Clojure. I'm convinced this is the correct long-term solution for dataviz in Clojure, but it is a big project that will take time, including a lot of <a href='https://www.youtube.com/watch?v=f84n5oFoZBc'>hammock time</a>. It's still useful to play around with proofs of concept whilst thinking through problems, though, and in the interest of transparency I'm making all of <a href='https://github.com/kiramclean/ggclj'>those experiments public</a>.</p><p>The discussions around this development are all also happening in public. There were two visual tools meetups focused on this over the last two months (<a href='https://www.youtube.com/watch?v=MxjzaOtcdcY'>link 1</a>, <a href='https://www.youtube.com/watch?v=d3iRGmbJmes'>link 2</a>). And at the London Clojurians talk I just gave today I demonstrated an example of one proposed implementation of a <a href='https://github.com/kiramclean/workshops/blob/main/london_clojurians_april_2024/src/utils/hana.clj'>grammar-of-graphics-like API</a> on top of hanami implemented by Daniel.</p><p>There are more meetups planned for the coming months and work in this area for the foreseeable future will look like researching and understanding the fundamentals of the grammar of graphics in order to design a simple implementation in Clojure.</p><h2 id="clojure's&#95;ml&#95;and&#95;statistics&#95;tools">Clojure's ML and statistics tools</h2><p>I spent a lot of time these last couple of months documenting and testing out Clojure's current ML tools, leading to many great conversations and one <a href='https://codewithkira.com/2024-04-04-state-of-clojure-ml.html'>blog post</a> that generated many more interesting discussions. The takeaway is that the tools themselves in this area are all quite mature and stable, but there are still ongoing discussions around how to best accommodate the different ways that people want to work with them. The overall goal in this area of my work is to stabilize the solutions so we can start advocating for specific ways of using them.</p><p>Below are some key takeaways from my research into all this stuff. Note none of these are my decisions to make alone, but represent my current opinions and what I will be advocating for within the community:</p><ul><li>Smile will be slowly sunsetted from the ecosystem. The switch to GPL licensing was made in bad faith and many of the common models don't work on Apple chips. Given the abundance of suitable alternatives, the easiest option is to move away from depending on it.</li><li>A greater distinction between statistical modelling and machine learning workflows will be helpful. Right now there are many uses of the various models that are available in Clojure, and the wrappers and tools surrounding them are usually designed with a specific type of user in mind. For example machine learning people almost always have separate training and testing datasets, whereas statisticians "train" their models on an entire dataset. The highest-level APIs for these different usages (among others) look quite different, and we would benefit from having APIs that are ergonomic and familiar to our target users of various backgrounds.</li><li>We should agree on standards for accomplishing certain very common and basic tasks and propose a recommended usage for users. For example, there are almost a dozen ways to do linear regression in Clojure and it's not obvious which is "the best" way to someone not deeply familiar with the ecosystem.</li><li>Everything should work with tablecloth datasets and expect them as inputs. This is mostly the case already, but there is still some progress to be made.</li></ul><h2 id="foundations&#95;of&#95;clojure's&#95;data&#95;science&#95;stack">Foundations of Clojure's data science stack</h2><p>I continue to work on guides and tutorials for the parts of Clojure's data science stack that I feel are ready for prime time, mainly tablecloth and all of the amazing underlying libraries it leverages. Every once in a while this turns up surprises, for example this month I was surprised at how column header processing is handled for nippy files specifically. I also <a href='https://github.com/scicloj/tablecloth/pull/143'>fixed one bug</a> in tablecloth itself, which I discovered in the process of writing a tutorial earlier in March. I have a pile of in-progress guides focusing on some more in-depth topics from developing the London Clojurians talk that I'm going to tidy up and publish in the coming months.</p><p>The overarching goal in this area is to create a unified data science stack with libraries for processing, modelling, and visualization that all interoperate seamlessly and work with tablecloth datasets, like the tidyverse in R. Part of achieving that is making sure that tablecloth is rock solid, which just takes a lot of poking and prodding.</p><h2 id="london&#95;clojurians&#95;talk">London Clojurians talk</h2><p>This talk was a big inspiration for diving deep into Clojure's data science ecosystem. I experimented with a ton of different datasets for the workshop and discovered tons of potential areas for future development. Trying to put together a polished data workflow really exposed many of the key areas I think we should be focusing on and gave me a lot of inspiration for future work. I spent a ton of time exploring all of the possible ways to demonstrate a broad sample of data science tools and learned a lot along the way.</p><p>The resources from the talk are all available <a href='https://github.com/kiramclean/workshops/tree/main/london_clojurians_april_2024'>in this repo</a> and the video will be posted soon.</p><h2 id="summary&#95;of&#95;future&#95;work">Summary of future work</h2><p>I mentioned a few areas of focus above, below is a summary of the ongoing work as I see it. A framework for organizing this work is starting to emerge, and I've been thinking about in terms of four key areas:</p><h3 id="visualisation">Visualisation</h3><ul><li>Priority here is to release a stable dataviz API using the tools and wrappers we currently have so that we can start releasing guides and tutorials that follow a consistent style.</li><li>The long-term goal is to develop a robust, flexible, and stable data visualization library in Clojure itself based on the grammar of graphics.</li></ul><h3 id="machine&#95;learning">Machine learning</h3><ul><li>Priority is to decide which APIs we will commit to supporting in the long term and stabilize the "glue" libraries that provide the high-level APIs for data-first users.</li><li>Long term goal is to support the full spectrum of libraries and models that are in everyday use by data science professionals.</li></ul><h3 id="statistics">Statistics</h3><ul><li>Priority is to document the current options for accomplishing basic statistical modelling tasks, including Clojure libraries we do have, Java libs, and Python interop.</li><li>Long term goal is to have tablecloth-compatible stats libraries implemented in pure Clojure.</li></ul><h3 id="foundations">Foundations</h3><ul><li>Priority is to build a tidyverse for Clojure. This includes battle-testing tablecloth, fully documenting its capabilities, and fixing remaining, small, sharp edges.</li></ul><h2 id="going&#95;forward">Going forward</h2><p>My overarching goal (personally) is still to write a canonical resource for working with Clojure's data science stack (the Clojure Data Cookbook), and I'm still working on finding the right balance of documenting "work-in-progress" tools and libraries vs. delaying progress until I feel they are more "ready". Until now I've let the absence of stable or ideal APIs in certain areas hinder development of this book, but I'm starting to feel very confident in my understanding of the current direction of the ecosystem, enough so that I would feel good about releasing something a little bit more formal than a tutorial or guide and recommending usages with the caveat that development is ongoing in some areas. And while it will take a while to get where we want to go, I feel like I can finally see the path to getting there. It just takes a lot of work and lot of collaboration, but with your support we'll make it happen! Thanks for reading.</p>
+
+
+
+
+<p>
+  <i>
+  Tagged:
+  
+  <span class="tag">
+    <a href="tags/clojure.html">clojure</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/oss-updates.html">oss updates</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/clojurists-together.html">clojurists together</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/open-source.html">open source</a>
+  </span>
+  
+  </i>
+</p>
+
+
+
+      
+      <div style="margin-bottom: 20px; float: right;">
+        <a href="archive.html">Archive</a>
+      </div>
+      
+    </main>
+  </body>
+</html>
