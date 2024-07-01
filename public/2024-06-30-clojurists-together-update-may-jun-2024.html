@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OSS Updates May and June 2024</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="application/atom+xml" rel="alternate" href="atom.xml" title="OSS Updates May and June 2024">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-clojure.min.js"></script>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css">
+
+
+
+    <!-- Social sharing (Facebook, Twitter, LinkedIn, etc.) -->
+    <meta name="title" content="OSS Updates May and June 2024">
+    <meta name="twitter:title" content="OSS Updates May and June 2024">
+    <meta property="og:title" content="OSS Updates May and June 2024">
+    <meta property="og:type" content="website">
+
+
+    <meta name="twitter:url" content="https://codewithkira.com/2024-06-30-clojurists-together-update-may-jun-2024.html">
+    <meta property="og:url" content="https://codewithkira.com/2024-06-30-clojurists-together-update-may-jun-2024.html">
+
+
+    <meta name="twitter:card" content="summary">
+
+
+
+    <script defer data-domain="codewithkira.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="https://analytics.eu.umami.is/script.js" data-website-id="21d16294-afc5-465a-a0b1-539ccf7679e9"></script>
+
+    <link rel="me" href="https://indieweb.social/@kira">
+    <link rel="me" href="https://github.com/kiramclean">
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="VRDCNTIY" defer></script>
+    <!-- / Fathom -->
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">Code with Kira</a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="archive.html">Archive</a></li>
+          <li><a href="tags/index.html">Tags</a></li>
+          <li><a href="atom.xml">Feed</a></li>
+          <li><a class="icon mastodon" href="https://indieweb.social/@kira" target="blank">Mastodon</a></li>
+          <li><a class="icon linkedin" href="https://www.linkedin.com/in/kiramclean" target="blank">LinkedIn</a></li>
+          <li><a class="icon github" href="https://github.com/kiramclean" target="blank">Github</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <h1>
+  
+    OSS Updates May and June 2024
+    
+</h1>
+<date><i>Published 2024-06-30</i></date>
+<p>This is a summary of the open source work I've spent my time on throughout May and June, 2024. There were lots of small bug fixes and reports, driven by work on the Clojure Data Cookbook. This work was also the impetus for my initial release of <a href='https://github.com/scicloj/tcutils'><code>tcutils</code></a>, a library of utility functions for working with tablecloth datasets. I also had the wonderful opportunity to attend PyData London in June and found it really insightful and inspiring. Read on for more details.</p><h2 id="sponsors">Sponsors</h2><p>This work is made possible by the generous ongoing support of my sponsors. I appreciate all of the support the community has given to my work and would like to give a special thanks to Clojurists Together and Nubank for providing me with lucrative enough grants that I can reduce my client work significantly and afford to spend more time on these projects.</p><p>If you find my work valuable, please share it with others and consider supporting it financially. There are details about how to do that on my <a href='https://github.com/sponsors/kiramclean'>GitHub sponsors page</a>. On to the updates!</p><h2 id="ecosystem&#95;issue&#95;reports&#95;and&#95;bug&#95;fixes">Ecosystem issue reports and bug fixes</h2><p>Working on the cookbook these last couple of months turned up a few small issues in ecosystem libraries. The other developers of Clojure's data science tools are such a pleasure to work with, it's so rare and nice to have a distributed team of people capable of getting cool things built asynchronously. Here are some details of a few particular issues that came up:</p><ul><li>Small problem loading .xls/.xlsx files as datasets if they had a number as a column name: <a href='https://clojurians.zulipchat.com/#narrow/stream/236259-tech.2Eml.2Edataset.2Edev/topic/xlsx.20column.20parsing/near/437313810'>discussed here</a>, <a href='https://github.com/techascent/tech.ml.dataset/issues/408'>reported here</a>, and graciously <a href='https://github.com/techascent/tech.ml.dataset/commit/24c0e646f289210aa95c1ac9998cb2ddd5c9f836'>fixed by Chris Nuernberger</a>.</li><li>Unexpected behaviour when comparing certain numeric types in <code>dtype-next</code>: <a href='https://clojurians.zulipchat.com/#narrow/stream/236259-tech.2Eml.2Edataset.2Edev/topic/numeric.20datatypes/near/438617694%5D(https://clojurians.zulipchat.com/%23narrow/stream/236259-tech.2Eml.2Edataset.2Edev/topic/numeric.20datatypes/near/438617694'>discussed here</a>, <a href='https://github.com/cnuernber/dtype-next/issues/99'>reported here</a>, and again <a href='https://github.com/cnuernber/dtype-next/commit/563fe9c13797feb206391cd951655942e3e6cf0f'>fixed by Chris</a>. This one sadly had some unintended consequences that <a href='https://github.com/cnuernber/dtype-next/issues/103'>generateme found and reported here</a>.</li><li><a href='https://github.com/scicloj/clay/blob/b299d060c3edbce789a55fee3efedce42fbd2ab4/CHANGELOG.md'>Many improvements to Clay</a> by Daniel Slutsky, especially a couple of ones that make the quarto publications it produces much nicer: <a href='https://github.com/scicloj/clay/pull/102'>fixing too-wide tables in quarto pages</a> and <a href='https://clojurians.zulipchat.com/#narrow/stream/321125-noj-dev/topic/kindly.20options/near/440663980'>supporting limiting the number of table rows that get displayed</a>.</li><li>Some good discussions about how best to incorporate the myriad of dependencies required to use Java machine learning libraries in Clojure libs, including sorting out what to do about <a href='https://github.com/scicloj/scicloj.ml.tribuo/issues/1'>transitive dependencies in our tribuo wrapper</a>, led by Carsten Behring.</li></ul><h2 id="initial&#95;release&#95;of&#95;tcutils">Initial release of tcutils</h2><p>In my explorations of other languages' tools for working data I often come across nice utility functions that are super simple but have a big impact on the ergonomics of using the tools. I wanted to start bringing some of these convenience utilities to Clojure, so for now I'm putting them in <a href='https://github.com/scicloj/tcutils'><code>tcutils</code></a>. So far only a handful of helpers are implemented (<code>lag</code>, <code>lead</code>, <code>cumsum</code>, and <code>clean-column-names</code>). The goal is to eventually fill out more utilities that save people from having to dig into the documentation of half a dozen different libraries to figure out how to implement things like these. The goal is not to achieve feature parity or to exactly copy similar libraries, like pandas or dplyr, but rather to take inspiration from them and make our tools easier to use for people who are used to these conveniences.</p><h2 id="progress&#95;on&#95;clojure&#95;data&#95;cookbook">Progress on Clojure Data Cookbook</h2><p>I spent a lot of time on the Clojure Data Cookbook over these last two months. Notable progress includes:</p><ul><li>The introductory chapters bear some resemblance now to the final form they'll take.</li><li>The overall structure of the book is much more clear now.</li><li>I started the example analysis that will serve as the high-level introductory section of the book.</li><li>The publishing and deployment process is finally working.</li></ul><p>It's still very much in progress, but in the interest of transparency the work-in-progress version is <a href='https://github.com/scicloj/clojure-data-cookbook'>available online now</a>. It will continue to evolve and change as I fill out more and more of the chapters, but there's enough of it available now to hopefully give a sense of the style and tone I'm going for. I also finally have the publishing workflow set up and it's generating a nice-looking Quarto book, thanks to all of Daniel Slutsky's amazing work on Clay and Quarto integration recently.</p><h2 id="progress&#95;on&#95;high-level&#95;goals">Progress on high-level goals</h2><p>The high-level goal of my work in general remains to steward Clojure's data science ecosystem to a state of maturity and flourishing so that data practitioners can use it to get real work done. Toward this end, I set up a <a href='https://github.com/users/kiramclean/projects/4'>project board</a> to track progress toward what I see as the main components of this project. </p><p>Over the last couple of months, beginning with a prototype demoed at my <a href='https://www.youtube.com/watch?v=eUFf3-og_-Y'>London Clojurians talk in April</a>, Daniel Slutsky has made tremendous progress on our goal of implementing a grammar of graphics in Clojure in the new <a href='https://github.com/scicloj/hanamicloth'>hanamicloth library</a>. The near-term goal is to stabilize the API of this library enough that it can be used to provide a user-friendly way to accomplish all of the simple data visualization tasks that are currently possible with our other tools. The long term goal is to take the lessons we learn from this library and build a JVM-only grammar of graphics library for doing data visualization "right" in Clojure.</p><p>The development and surrounding discussions of hanamicloth have also made me realize it would be useful to write an overview of the current state of dataviz options for Clojure and why we're working on building something new. That's on my list for the coming months, but lower priority than actual development work.</p><h2 id="impressions&#95;from&#95;pydata&#95;london">Impressions from PyData London</h2><p>I got to attend PyData London this year thanks to a client of mine who was sponsoring the conference. I learned a lot and found the talks very interesting. My overall impression is that data science is maturing as a discipline, with more polished methods and robust theory backing up different approaches to data-related problems. With this maturation, though, comes higher expectations for production-ready, professional quality results. Most of the talks focused on high-level concerns like observability, scalability, and long-term stewardship of large open-source projects.</p><p>There are a lot of reasons why Python is just not ideal for building highly available, high-performance systems, and I really believe this is a good time to be building alternative tools for data science. Python is obviously entrenched as the current default language for working with data, but it is difficult and slow to write code that can take full advantage of modern hardware (because of the infamous global interpreter lock, reference counting, slow I/O, among other reasons). And to be fair, the Python community knows this. It's why virtually all of the libraries that do the heavy lifting for data science in Python are actually implemented in C (numpy,  pandas) or Rust (Polars, Pydantic), or are wrappers around C++ (PyTorch, TensorFlow, matplotlib) or Java (PySpark, Pydoop, confluent-kafka) libraries. </p><p>I think this provides a lot of insights into what data practitioners want. It's clear that users <i>want</i> approachable, simple, human-readable interfaces for all of these tools, and that any new tool needs to interoperate with the rest of the ones currently in use. People are also <a href='https://news.ycombinator.com/item?id=40815097'>tired of churn</a> and are craving stability. I think Clojure has a lot to offer in all of these areas and is well placed to become more widely adopted for data science.</p><h2 id="ongoing&#95;work">Ongoing work</h2><p>My focus over the next two months will remain on the cookbook. My main goal is to finish the introductory chapter with the housing price analysis and to continue putting together the data import section with instructions and examples for all file formats that can reasonably be supported easily at this time.</p><p>I'll continue to support and contribute to all of the ecosystem libraries I come across in my writings and analysis work in hopes of smoothing out all the rough edges I find.</p><p>Thanks for reading. I always love hearing from people who are interested in any of the things I'm working on. If that's you, don't hesitate to be in touch :)</p>
+
+
+
+
+<p>
+  <i>
+  Tagged:
+  
+  <span class="tag">
+    <a href="tags/clojure.html">clojure</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/oss-updates.html">oss updates</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/clojurists-together.html">clojurists together</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/open-source.html">open source</a>
+  </span>
+  
+  </i>
+</p>
+
+
+
+      
+      <div style="margin-bottom: 20px; float: right;">
+        <a href="archive.html">Archive</a>
+      </div>
+      
+    </main>
+  </body>
+</html>

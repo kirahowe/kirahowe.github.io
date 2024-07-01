@@ -175,25 +175,31 @@ code {
 /* Links
 /**********************************************************************/
 
-a {
+a, a code {
   color: var(--colour);
 }
 
-a:visited {
+a:visited, a:visited code {
   color: var(--text);
 }
 
-a:focus, a:hover {
+a:focus, a:hover, a:focus code, a:hover code {
   background: var(--colour);
   color: var(--background);
   outline: 3px solid var(--colour);
   text-decoration: none;
 }
 
-a:visited:hover, a:visited:focus {
+a:visited:hover, a:visited:focus, a:visited:hover code, a:visited:focus code {
   background: var(--text);
   color: var(--background);
   outline: 3px solid var(--text);
+}
+
+a:focus code, a:hover code, a:visited:hover code, a:visited:focus code {
+  background: unset;
+  box-shadow: unset;
+  padding-bottom: 0
 }
 
 /**********************************************************************/
