@@ -258,7 +258,7 @@ code {
   border-radius: 5px;
   box-shadow: 2px 2px var(--shadow);
   font-family: var(--monospace);
-  font-size: 0.85rem;
+  font-size: 0.85rem !important; /* because of prism.js */
   margin: 0 0.1rem;
   padding: 0.1rem 0.45rem;
 }
@@ -271,7 +271,7 @@ pre {
   background: var(--code-background);
   border-radius: 5px;
   box-shadow: 2px 2px var(--shadow);
-  font-size: var(--small);
+  font-size: var(--small) !important; /* because of prism.js */
   overflow-x: auto;
   padding: 0.5rem 1rem;
   color: var(--code);
