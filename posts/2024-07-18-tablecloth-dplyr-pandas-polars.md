@@ -134,7 +134,7 @@ For example a set (indicated with the `#{}` syntax in Clojure) is a special func
 ### Select only numeric columns
 | Library | Code |
 | --- | --- |
-| tablecloth | `(tc/select-columns ds :type/numerical` |
+| tablecloth | `(tc/select-columns ds :type/numerical)` |
 | dplyr | `select(ds, where(is.numeric))` |
 | pandas | `ds.select_dtypes(include='number')` |
 | polars | `ds.select(cs.numeric())` |
