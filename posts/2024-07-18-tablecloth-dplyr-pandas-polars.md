@@ -302,7 +302,7 @@ Clojure's tablecloth emphasizes functional programming concepts and immutability
 Thanks for reading :)
 
 ## Versions
-This code in this post works with the following language and library versions:
+The code in this post works with the following language and library versions:
 
 | Tool | Version |
 | --- | --- |
