@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Making data useful</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="application/atom+xml" rel="alternate" href="atom.xml" title="Making data useful">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-clojure.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-r.min.js"></script>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css">
+
+
+
+    <!-- Social sharing (Facebook, Twitter, LinkedIn, etc.) -->
+    <meta name="title" content="Making data useful">
+    <meta name="twitter:title" content="Making data useful">
+    <meta property="og:title" content="Making data useful">
+    <meta property="og:type" content="website">
+
+
+    <meta name="twitter:url" content="https://codewithkira.com/2025-02-26-making-data-useful.html">
+    <meta property="og:url" content="https://codewithkira.com/2025-02-26-making-data-useful.html">
+
+
+    <meta name="twitter:card" content="summary">
+
+
+
+    <script defer data-domain="codewithkira.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="https://analytics.eu.umami.is/script.js" data-website-id="21d16294-afc5-465a-a0b1-539ccf7679e9"></script>
+
+    <link rel="me" href="https://indieweb.social/@kira">
+    <link rel="me" href="https://github.com/kiramclean">
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="VRDCNTIY" defer></script>
+    <!-- / Fathom -->
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">Code with Kira</a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="archive.html">Archive</a></li>
+          <li><a href="tags/index.html">Tags</a></li>
+          <li><a href="atom.xml">Feed</a></li>
+          <li><a class="icon mastodon" href="https://indieweb.social/@kira" target="blank">Mastodon</a></li>
+          <li><a class="icon linkedin" href="https://www.linkedin.com/in/kiramclean" target="blank">LinkedIn</a></li>
+          <li><a class="icon github" href="https://github.com/kiramclean" target="blank">Github</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <h1>
+  
+    Making data useful
+    
+</h1>
+<date><i>Published 2025-02-26</i></date>
+<p><img src="/assets/profit.jpg" alt="How do we turn messy data into profit?" /></p><p>Making data useful is difficult. The whole point of data engineering/science/analysis/etc is to turn all of the endless piles of information we collect into <i>something</i> that people find valuable. I've spent the better part of the last decade in my career as a software engineer building systems that do this, and I've noticed that it is remarkably difficult to do well. There are many points where the process breaks down, and no silver bullet for fixing them. I've spent a lot of time trying to organize my thoughts on the topic and wrote this down one night:</p><p><img src="/assets/pipeline.jpg" alt="Turning chaotic and unorganized information into useful insights" /></p><p>This is one path that the piles of chaotic information we hoard can take to become useful. One problem is that executing all of these steps well requires at minimum a software engineer, a data scientist, and a business analyst.</p><p>Without an engineer your data pipelines will be unreliable and incorrect, without a data scientist your analysis will be misleading, and without a business analyst the results will be meaningless and never reach the people who need to see them. That's easily $0.5M/year in headcount alone, a huge expense even if you manage to find a team of open source superstars who can do all of this with free tools and minimal infrastructure.</p><p>Another problem is that the steps along this path are not neatly delineated in any way, making them hard to outsource or share. You need the whole team working closely together start to finish to clear a path for your data to flow through the organization.</p><ul><li>A software/data engineer understands how to extract, organize, transform, and store data, but doesn't have a clue what it means. They need input from the business analyst on day one to understand <em>which</em> data should be extracted, and input from the data scientist to understand what format and storage solution will be most convenient for their use. Then they need to come back at the end of the process and help with distribution and dissemination, shipping dashboards, apps, reports, and other ways for non-technical end-users to actually see the results.</li><li>The data scientist needs help from the software engineer to understand why the incoming data is incomplete, inaccurate, and out of date. They need their buy-in to help increase the data's quality, and their help to implement observability and quality checks in a way that isn't slow and expensive. Then once they have clean datasets (no small feat), they need input from the business analyst to understand what they should be looking for.</li><li>The business analyst needs to be giving input every step of the way to make sure the right data gets collected in the first place all the way through to seeing that the right reports are delivered to the right people. They also need to explain the domain and context to their more technical teammates to make sure what they're building is actually valuable to the organization.</li></ul><p>There are tools that can help make some of this smoother, but it's a fundamentally complex problem to optimize in a cost-effective way. It's really interesting to think through where the pain points are, and how technology can help address them. This is what's taking up a lot of my bandwidth lately, so if any of it resonates with you I'd love to chat sometime!</p>
+
+
+
+
+<p>
+  <i>
+  Tagged:
+  
+  <span class="tag">
+    <a href="tags/data-engineering.html">data engineering</a>
+  </span>
+  
+  <span class="tag">
+    <a href="tags/data.html">data</a>
+  </span>
+  
+  </i>
+</p>
+
+
+
+      
+      <div style="margin-bottom: 20px; float: right;">
+        <a href="archive.html">Archive</a>
+      </div>
+      
+    </main>
+  </body>
+</html>
